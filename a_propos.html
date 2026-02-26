@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A propas de moi (Valentin 2.0)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-pink-800 via-pink-700 to-pink-800" style="font-family: 'Playfair Display', serif;">
+    
+    <audio id="music" loop>
+      <source src="music/Without you.aac" type="audio/mpeg">
+    </audio>
+
+     <script>
+         const music = document.getElementById("music");
+         music.volume = 0.3;
+
+         document.addEventListener("click", () => {
+         music.play();
+         }, { once: true });
+     </script>
+
+    <header class="text-white bg-pink-950  flex justify-between border-2 border-pink-800 rounded-2xl p-3 m-4">
+
+        <div style="font-family: 'Great Vibes', cursive;" class="font-medium text-lg animate-pulse transition-transform duration-500 scale-90 opacity-0 animate-on-scroll">
+             Valentin 2.0
+        </div>
+
+         <div class="block md:hidden transition-transform duration-100 active:scale-95">
+             <a href="menu.html"><img src="icons/heart-blanc.svg" alt="menu"></a>
+        </div>
+
+        <nav class="hidden md:flex space-x-5">
+            <a href="index.html">Accueil_</a>
+            <a href="#">A propos</a>
+            <a href="contact .html">Contact</a>
+        </nav>
+    </header>
+
+    <section>
+
+        <h2 class="text-center text-white p-8 transition-transform duration-500 scale-90 opacity-0 animate-on-scroll">
+            Je suis Loïc ASSOGBA étudiant en Developpement Web en formation à FuturCraft Institut 
+        </h2>
+
+        <div class="md:flex">
+                          
+             <img src="image/moi.jpg" alt="Moi" class="w-64 h-64 px-8 py-2 md:p-2 rounded-2xl">
+             
+             <p class="text-white p-8 transition-transform duration-500 scale-90 opacity-0 animate-on-scroll">
+                 Passionné par la création et les émotions vraies, j'ai conçu ce site pour célébrer l'amour sous toutes ses formes. 
+                 Chaque détail, chaque couleur et chaque mot ont été pensés pour transmettre un message simple mais puissant : l'amour mérite d'être exprimé. 
+                 En tant que développeur en formation, je mets mes compétences au service de vos sentiments, afin de transformer vos idées en souvenirs uniques et inoubliables. 
+                 Mon objectif est de créer des expériences digitales qui touchent le cœur, parce que derrière chaque écran, il y a une histoire, une émotion… et peut-être une belle 
+                 déclaration qui commence ici ❤️.
+             </p> 
+
+        </div>
+
+    </section>
+
+    <footer class="bg-[url('image/footer.jpg')] bg-cover p-3">
+        
+         <h2 class="font-semibold text-lg text-center text-white transition-transform duration-500 scale-90 opacity-0 animate-on-scroll">
+            Suivez-moi sur :
+        </h2>
+
+        <div class="flex justify-center space-x-4 p-2">
+             <a href="https://www.facebook.com/loic.assogba.71"><img src="icons/Facebook-Logo-1--Streamline-Flex.png" alt="" class="block h-8"></a>
+             <a href="https://wa.me/22967566687"><img src="icons/Whatsapp--Streamline-Ios-14.png" alt="" class="h-8"></a>
+        </div>
+                <br> 
+        <h3 class=" text-center p-6 font-medium text-white animate-pulse">
+            Réalisée par Loïc ASSOGBA <br> Etudiant à FuturCraft Institut
+        </h3>
+
+    </footer>
+
+
+</body>
+</html>
