@@ -1,154 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Contactez moi </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js" defer></script>    
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contactez moi</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="script.js" defer></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
 
-<script>
-function sendWhatsApp(event) {
-  event.preventDefault();
+    <script>
+        function sendWhatsApp(event) {
+            event.preventDefault();
 
-  let name = document.getElementById("name").value;
-  let phone = document.getElementById("phone").value;
-  let email = document.getElementById("email").value;
-  let message = document.getElementById("message").value;
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let email = document.getElementById('email').value;
+            let message = document.getElementById('message').value;
 
-  let myNumber = "22967566687"; // ton numéro WhatsApp
+            let myNumber = '22967566687'; // ton numéro WhatsApp
 
-  let url = "https://wa.me/" + myNumber + "?text=" 
-    + encodeURIComponent(
-      "💖 Nouveau message Saint-Valentin 💖\n\n" +
-      "Nom : " + name + "\n" +
-      "Numéro WhatsApp : " + phone + "\n" +
-      "Email : " + email + "\n" +
-      "Message : " + message
-    );
+            let url =
+                'https://wa.me/' +
+                myNumber +
+                '?text=' +
+                encodeURIComponent(
+                    '💖 Nouveau message Saint-Valentin 💖\n\n' +
+                        'Nom : ' +
+                        name +
+                        '\n' +
+                        'Numéro WhatsApp : ' +
+                        phone +
+                        '\n' +
+                        'Email : ' +
+                        email +
+                        '\n' +
+                        'Message : ' +
+                        message
+                );
 
-  window.open(url, "_blank");
-}
-</script>
+            window.open(url, '_blank');
+        }
+    </script>
 
-<body class="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-500" style="font-family: 'Playfair Display', serif;">
-      
-    <audio id="music" loop>
-      <source src="music/Without you.aac" type="audio/mpeg">
-    </audio>
+    <body
+        class="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-500"
+        style="font-family: 'Playfair Display', serif"
+    >
+        <audio id="music" loop>
+            <source src="music/Without you.aac" type="audio/mpeg" />
+        </audio>
 
-     <script>
-         const music = document.getElementById("music");
-         music.volume = 0.3;
+        <script>
+            const music = document.getElementById('music');
+            music.volume = 0.3;
 
-         document.addEventListener("click", () => {
-         music.play();
-         }, { once: true });
-     </script>
+            document.addEventListener(
+                'click',
+                () => {
+                    music.play();
+                },
+                { once: true }
+            );
+        </script>
 
-    <header class="text-white bg-pink-950  flex justify-between border-2 border-pink-800 rounded-2xl p-3 m-4">
+        <header
+            class="text-white bg-pink-950 flex justify-between border-2 border-pink-800 rounded-2xl p-3 m-4"
+        >
+            <div
+                style="font-family: 'Great Vibes', cursive"
+                class="font-medium text-lg animate-pulse transition-transform duration-500 scale-90 opacity-0 animate-on-scroll"
+            >
+                Valentin 2.0
+            </div>
 
-        <div style="font-family: 'Great Vibes', cursive;" class="font-medium text-lg animate-pulse transition-transform duration-500 scale-90 opacity-0 animate-on-scroll">
-             Valentin 2.0
-        </div>
+            <div
+                class="block md:hidden transition-transform duration-100 active:scale-95"
+            >
+                <a
+                    href="menu.html"
+                    class="transition-transform duration-100 active:scale-95"
+                    ><img
+                        src="icons/heart-blanc.svg"
+                        alt="menu"
+                        class="transition-transform duration-100 active:scale-95"
+                /></a>
+            </div>
 
-         <div class="block md:hidden transition-transform duration-100 active:scale-95">
-             <a href="menu.html" class="transition-transform duration-100 active:scale-95"><img src="icons/heart-blanc.svg" alt="menu" class="transition-transform duration-100 active:scale-95"></a>
-        </div>
+            <nav class="hidden md:flex space-x-5">
+                <a href="index.html">Accueil_</a>
+                <a href="a_propos.html">A propos</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
 
-        <nav class="hidden md:flex space-x-5">
-            <a href="index.html">Accueil_</a>
-            <a href="a_propos.html">A propos</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+        <section class="relative h-screen w-full overflow-hidden">
+            <!-- Vidéo Background -->
+            <video
+                autoplay
+                muted
+                loop
+                playsinline
+                class="absolute top-0 left-0 w-full h-full object-cover"
+            >
+                <source
+                    src="video/WhatsApp Video 2026-02-14 at 16.17.46.mp4"
+                    type="video/mp4"
+                />
+            </video>
 
-         <section class="relative h-screen w-full overflow-hidden">
+            <!-- Overlay sombre -->
+            <div class="absolute top-0 left-0 w-full h-full bg-black/50"></div>
 
-     <!-- Vidéo Background -->
-         <video 
-             autoplay 
-             muted 
-             loop 
-             playsinline 
-             class="absolute top-0 left-0 w-full h-full object-cover">
-              <source src="video/WhatsApp Video 2026-02-14 at 16.17.46.mp4" type="video/mp4">
-         </video>
+            <div
+                class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6"
+            >
+                <h2
+                    class="text-2xl md:text-4xl font-medium mb-6 transition-transform duration-500 scale-90 opacity-0 animate-on-scroll animate-pulse"
+                >
+                    Une Question, Une surprise à préparer, Un projet
+                    personnel... <br />
+                    <br />
+                    Je suis disponoble pour toute collaboration <br /><br />
+                    Contacte moi <br /><br />
+                    ❤️✨
+                </h2>
+            </div>
+        </section>
 
-     <!-- Overlay sombre -->
-     <div class="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+        <section
+            class="contact text-center p-4 bg-gradient-to-r from-pink-800 via-pink-700 to-pink-800"
+        >
+            <form
+                class="flex flex-col gap-4 items-center w-full max-w-md mx-auto"
+                onsubmit="sendWhatsApp(event)"
+            >
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Votre nom..."
+                    required
+                    class="bg-pink-950 rounded-full p-3 text-white w-full"
+                />
 
-  
-         <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Votre email..."
+                    required
+                    class="bg-pink-950 rounded-full p-3 text-white w-full"
+                />
 
-         <h2 class="text-2xl md:text-4xl font-medium mb-6 transition-transform duration-500 scale-90 opacity-0 animate-on-scroll animate-pulse">
-             Une Question, 
-             Une surprise à préparer, 
-             Un projet personnel... <br> <br> 
-             Je suis disponoble pour toute collaboration <br><br>
-             Contacte moi <br><br>
-              ❤️✨
-         </h2>
-        
-     </div>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Votre numéro WhatsApp..."
+                    required
+                    class="bg-pink-950 rounded-full p-3 text-white w-full"
+                />
 
-    </section>
+                <textarea
+                    id="message"
+                    placeholder="Votre message..."
+                    required
+                    class="bg-pink-950 rounded-2xl p-3 text-white w-full"
+                ></textarea>
 
+                <button
+                    type="submit"
+                    class="bg-pink-950 hover:bg-pink-800 transition rounded-full p-3 text-white w-full"
+                >
+                    Envoyer sur WhatsApp 💌
+                </button>
+            </form>
+        </section>
+        <footer class="bg-black p-3">
+            <h2
+                class="font-semibold text-lg text-center text-white transition-transform duration-500 scale-90 opacity-0 animate-on-scroll"
+            >
+                Suivez-moi sur :
+            </h2>
 
-    <section class="contact text-center p-4 bg-gradient-to-r from-pink-800 via-pink-700 to-pink-800">
-
-         <form class="flex flex-col gap-4 items-center w-full max-w-md mx-auto"
-              onsubmit="sendWhatsApp(event)">
-
-             <input type="text" id="name"
-                 placeholder="Votre nom..."
-                 required
-                 class="bg-pink-950 rounded-full p-3 text-white w-full">
-
-             <input type="email" id="email"
-                 placeholder="Votre email..."
-                 required
-                 class="bg-pink-950 rounded-full p-3 text-white w-full">
-
-             <input type="tel" id="phone"
-                 placeholder="Votre numéro WhatsApp..."
-                 required
-                 class="bg-pink-950 rounded-full p-3 text-white w-full">    
-
-             <textarea id="message"
-                 placeholder="Votre message..."
-                 required
-                 class="bg-pink-950 rounded-2xl p-3 text-white w-full"></textarea>
-
-             <button type="submit"
-                 class="bg-pink-950 hover:bg-pink-800 transition rounded-full p-3 text-white w-full">
-                      Envoyer sur WhatsApp 💌
-             </button>
-
-         </form>
-
-</section>
-    <footer class="bg-black p-3">
-        
-         <h2 class="font-semibold text-lg text-center text-white transition-transform duration-500 scale-90 opacity-0 animate-on-scroll">
-            Suivez-moi sur :
-        </h2>
-
-        <div class="flex justify-center space-x-4 p-2">
-             <a href="https://www.facebook.com/loic.assogba.71"><img src="icons/Facebook-Logo-1--Streamline-Flex.png" alt="" class="block h-8"></a>
-             <a href="https://wa.me/22967566687"><img src="icons/Whatsapp--Streamline-Ios-14.png" alt="" class="h-8"></a>
-        </div>
-                <br> <br> 
-        <h3 class=" text-center p-2 font-medium text-white animate-pulse">
-            Réalisée par Loïc ASSOGBA <br> Etudiant à FuturCraft Institut
-        </h3>
-
-    </footer>
-
-
-</body>
+            <div class="flex justify-center space-x-4 p-2">
+                <a href="https://www.facebook.com/loic.assogba.71"
+                    ><img
+                        src="icons/Facebook-Logo-1--Streamline-Flex.png"
+                        alt=""
+                        class="block h-8"
+                /></a>
+                <a href="https://wa.me/22967566687"
+                    ><img
+                        src="icons/Whatsapp--Streamline-Ios-14.png"
+                        alt=""
+                        class="h-8"
+                /></a>
+            </div>
+            <br />
+            <br />
+            <h3 class="text-center p-2 font-medium text-white animate-pulse">
+                Réalisée par Loïc ASSOGBA <br />
+                Etudiant à FuturCraft Institut
+            </h3>
+        </footer>
+    </body>
 </html>
