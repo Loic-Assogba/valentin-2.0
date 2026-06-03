@@ -68,49 +68,119 @@
         </script>
 
         <header
-            class="text-white bg-pink-950 flex justify-between border-2 border-pink-800 rounded-2xl p-3 m-4 items-center"
+            class="fixed top-0 left-0 right-0 z-50 bg-pink-950/90 backdrop-blur-md border-b border-pink-800 shadow-lg m-2 rounded-2xl"
         >
-            <!-- Logo -->
             <div
-                style="font-family: 'Great Vibes', cursive"
-                class="font-medium text-lg animate-pulse transition-transform duration-500 scale-90 opacity-0 animate-on-scroll"
+                class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4"
             >
-                Valentin 2.0
+                <!-- Logo -->
+                <a
+                    href="#"
+                    style="font-family: 'Great Vibes', cursive"
+                    class="text-2xl sm:text-3xl text-white hover:scale-105 transition-transform duration-300"
+                >
+                    Valentin 2.0
+                </a>
+
+                <!-- Navigation Desktop -->
+                <nav
+                    class="hidden md:flex items-center gap-8 text-white font-medium"
+                >
+                    <a
+                        href="#"
+                        class="hover:text-pink-300 transition-colors duration-300"
+                    >
+                        Accueil
+                    </a>
+
+                    <a
+                        href="a_propos.html"
+                        class="hover:text-pink-300 transition-colors duration-300"
+                    >
+                        À propos
+                    </a>
+
+                    <a
+                        href="contact.html"
+                        class="hover:text-pink-300 transition-colors duration-300"
+                    >
+                        Contact
+                    </a>
+                </nav>
+
+                <!-- Bouton Burger Mobile -->
+                <button
+                    id="burgerBtn"
+                    class="md:hidden text-white focus:outline-none"
+                    aria-label="Ouvrir le menu"
+                >
+                    <svg
+                        id="burgerIcon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-8 h-8"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                </button>
             </div>
 
-            <!-- Burger mobile -->
-            <button
-                id="burgerBtn"
-                class="block md:hidden focus:outline-none transition-transform duration-100 active:scale-95"
-            >
-                <a href="menu.html"
-                    ><img
-                        src="icons/heart-blanc.svg"
-                        alt="menu"
-                        class="w-8 h-8"
-                /></a>
-            </button>
-
-            <!-- Menu -->
+            <!-- Navigation Mobile -->
             <nav
                 id="navMenu"
-                class="hidden flex-col md:flex md:flex-row md:space-x-5 absolute md:static right-4 top-16 bg-pink-800 p-4 rounded-lg md:bg-transparent md:p-0 md:rounded-none"
+                class="hidden md:hidden bg-pink-900/95 backdrop-blur-md border-t border-pink-800"
             >
-                <a href="#" class="block py-2 md:py-0 hover:text-pink-300"
-                    >Accueil</a
-                >
-                <a
-                    href="a_propos.html"
-                    class="block py-2 md:py-0 hover:text-pink-300"
-                    >À propos</a
-                >
-                <a
-                    href="contact.html"
-                    class="block py-2 md:py-0 hover:text-pink-300"
-                    >Contact</a
-                >
+                <div class="flex flex-col px-6 py-4 space-y-4 text-white">
+                    <a
+                        href="#"
+                        class="hover:text-pink-300 transition-colors duration-300"
+                    >
+                        Accueil
+                    </a>
+
+                    <a
+                        href="a_propos.html"
+                        class="hover:text-pink-300 transition-colors duration-300"
+                    >
+                        À propos
+                    </a>
+
+                    <a
+                        href="contact.html"
+                        class="hover:text-pink-300 transition-colors duration-300"
+                    >
+                        Contact
+                    </a>
+                </div>
             </nav>
         </header>
+
+        <!-- Compensation pour le header fixed -->
+        <div class="h-20"></div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const burgerBtn = document.getElementById('burgerBtn');
+                const navMenu = document.getElementById('navMenu');
+
+                burgerBtn.addEventListener('click', () => {
+                    navMenu.classList.toggle('hidden');
+                });
+
+                document.querySelectorAll('#navMenu a').forEach((link) => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.add('hidden');
+                    });
+                });
+            });
+        </script>
 
         <section class="relative h-screen w-full overflow-hidden">
             <!-- Vidéo Background -->
